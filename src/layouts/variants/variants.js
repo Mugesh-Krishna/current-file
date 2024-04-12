@@ -16,8 +16,6 @@ import {
   TableRow
 } from "@mui/material";
 import { FaTrash } from "react-icons/fa";
-import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 
@@ -172,22 +170,17 @@ function Variants({ price }) {
               <TableBody>
                 {tableData.map((data, dataIndex) => (
                   <TableRow key={dataIndex}>
-                    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
+                    <TableCell>
         {data.variant}
-      </AccordionSummary>
-      {/* <AccordionDetails> */}
+     
+    
         {data.newField.map((field, fieldIndex) => (
           <div key={fieldIndex}>
             <h4 >{field}</h4>
           </div>
         ))}
-      {/* </AccordionDetails> */}
-    </Accordion>
+    
+    </TableCell>
                     <TableCell>{data.price}</TableCell>
                     <TableCell>
                       
